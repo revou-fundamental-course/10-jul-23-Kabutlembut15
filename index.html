@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="BMI.css">
+    <title>BMI Calculator</title>
+  </head>
+  
+  <body>
+    <div class="wrapper">
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <div class="flex-wrap" id="calc-container">
+        <form id="bmi-form">
+          <div id="metric">
+            <div class="form-group">
+              <label for="weight">Weight (KG): </label>
+              <input type="text" id="weight" class="weight" placeholder="Weight">
+            </div>
+
+            <div class="form-group">
+              <label for="height">Height (CM): </label>
+              <input type="text" id="height" class="height" placeholder="Height">
+            </div>
+
+            <div class="form-group">
+              <input type="button" value="Submit" onclick="calculateBMI()">
+              <button type="reset" class="reset">Reset</button>
+            </div>
+            <a href="#" onclick="switchToImperial()">FEET and INCHES and POUNDS!</a>
+          </div>
+
+          <div id="imperial">
+            <div class="form-group">
+              <label for="weight-imperial">Weight (LBS): </label>
+              <input type="text" id="weight-imperial" class="weight-imperial" placeholder="Weight">
+            </div>
+            <div class="form-group">
+              <label for="height-feet">Height (Feet): </label>
+              <input type="text" id="height-feet" class="height-usa" placeholder="Height">
+              <label for="height-inches">(Inches): </label>
+              <input type="text" id="height-inches" class="height-usa" placeholder="Height">
+            </div>
+            
+            <div class="form-group">
+              <input type="button" value="Submit" onclick="calculateBMI()">
+              <button type="reset" class="reset">Reset</button>
+            </div>
+            <a href="#" onclick="switchToMetric()">The Metric System</a>
+          </div>
+        </form>
+        
+        <div class="results-wrap">
+          <div class="text-center">
+            <h2>Results</h2>
+            <div id="error-msg-wrap">
+              <p id="error-msg-txt">
+                <!-- for print error message -->
+              </p>
+            </div>
+            <div class="flex-wrap" id="results">
+              <ul>
+                <li>Height:   <span id="results-height"></span></li>
+                <li>Weight:   <span id="results-weight"></span></li>
+                <li>BMI:      <span id="results-bmi"></span></li>
+                <li>Category: <span id="results-cat"></span></li>
+              </ul>
+              <div class="colored-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="BMI.js"></script>
+</body>
+</html>
